@@ -6,6 +6,7 @@ export default function FadeInView(props) {
 
   React.useEffect(() => {
     Animated.timing(fadeAnim, {
+      useNativeDriver: true,
       toValue: 1,
       duration: 10000,
     }).start()
