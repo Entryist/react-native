@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, {useState} from 'react'
 import Modal from '@material-ui/core/Modal';
 import styled from 'styled-components'
@@ -68,7 +69,7 @@ export default function PersonModal({ params }:{ params:PersonParams }) {
       <PersonImg img={img} />
       {owner_alias && <H2>{owner_alias}</H2>}
       {description && <H3>
-        {description}  
+        {description}
       </H3>}
       <TextareaWrap>
         <Input value={message} placeholder={`Initial Message to ${owner_alias}`}
@@ -76,7 +77,7 @@ export default function PersonModal({ params }:{ params:PersonParams }) {
         />
       </TextareaWrap>
       {price_to_meet && <H3>
-        {`Price to Meet: ${price_to_meet} sats`}  
+        {`Price to Meet: ${price_to_meet} sats`}
       </H3>}
       <ButtonsWrap>
         <Button onClick={onClose} style={{marginRight:10}}>CANCEL</Button>
@@ -92,8 +93,8 @@ export default function PersonModal({ params }:{ params:PersonParams }) {
 
 function PersonImg({img}) {
   return <ImgWrap>
-    {img ? 
-      <Img src={img} /> : 
+    {img ?
+      <Img src={img} /> :
       <FaceIcon style={{fontSize:96,color:'#6681fe',marginBottom:20}} />
     }
   </ImgWrap>

@@ -76,13 +76,14 @@ export default function Head({ height, appMode, appURL, setAppMode, messagePrice
     // }
     function openTribeInfo(){
       if(chat && chat.status === constants.chat_statuses.pending) return
-      ui.setTribeInfo(chat, tribeParams)
+      console.log('ui.setTribeInfo would go here', chat, tribeParams)
+      // ui.setTribeInfo(chat, tribeParams)
     }
 
 
     return <Wrap style={{ background: theme.bg, height }}>
       {!chat && !showURL && <Placeholder>
-        Open a conversation to start using Sphinx
+        Open a conversation to start using Zion
       </Placeholder>}
       {chat && <Inner>
         <Left>
@@ -171,7 +172,7 @@ const Wrap = styled.div`
   align-items:center;
   justify-content:space-between;
   box-shadow: 5px 0px 17px 0px rgba(0,0,0,0.45);
-  position:relative; 
+  position:relative;
   z-index:100;
 `
 const SatWrap = styled.div`

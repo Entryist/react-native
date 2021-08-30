@@ -119,7 +119,7 @@ function Main(){
     }, 1500)
     msg.initLastSeen()
     checkVersion()
-    details.getRelayVersion().then(v=>console.log("VERSION",v))
+    // details.getRelayVersion().then(v=>console.log("VERSION",v))
   },[])
 
   async function checkVersion(){
@@ -140,7 +140,7 @@ const Loading=styled.div`
   display:flex;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(145deg, #A68CFF 0%, #6A8FFF) 0% 0% / cover; 
+  background:linear-gradient(145deg, #A68CFF 0%, #6A8FFF) 0% 0% / cover;
 `
 
 export default Wrap
@@ -148,4 +148,3 @@ export default Wrap
 async function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms))
 }
-

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, {useState} from 'react'
 import Modal from '@material-ui/core/Modal';
 import styled from 'styled-components'

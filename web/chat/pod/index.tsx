@@ -26,7 +26,7 @@ export default function Pod({ url, chat, onBoost }) {
   const [insfBalance, setInsfBalance] = useState(false)
 
   const [ppm,setPpm] = useState<number>(5)
-  
+
   useEffect(()=>{
     if(chat) {
       let initppm = chats.pricesPerMinute[chatID]
@@ -74,7 +74,7 @@ export default function Pod({ url, chat, onBoost }) {
         let episode
         if(isPlaying && eid) {
           episode = thepod.episodes && thepod.episodes.length && thepod.episodes.find(e=>e.id===eid)
-        } 
+        }
         if(!episode) {
           episode = thepod.episodes && thepod.episodes.length && thepod.episodes[0]
         }
@@ -115,13 +115,14 @@ export default function Pod({ url, chat, onBoost }) {
     if (!dests) return
     if (!pod.id || !selectedEpisodeID) return
     const memo = JSON.stringify(sp)
-    feed.sendPayments({
-      destinations: dests,
-      text: memo,
-      amount: amount,
-      chat_id: chatID,
-      update_meta: false
-    })
+    console.log('commented out feed.sendPayments here')
+    // feed.sendPayments({
+    //   destinations: dests,
+    //   text: memo,
+    //   amount: amount,
+    //   chat_id: chatID,
+    //   update_meta: false
+    // })
   }
 
   async function sendPayments(ts: number) {
@@ -142,13 +143,14 @@ export default function Pod({ url, chat, onBoost }) {
       ts: Math.round(pos),
     }
     const memo = JSON.stringify(sp)
-    feed.sendPayments({
-      destinations: dests,
-      text: memo,
-      amount: item.price || pricePerMinute,
-      chat_id: item.chatID,
-      update_meta: true
-    })
+    console.log('commented out feed.sendPayments here (2)')
+    // feed.sendPayments({
+    //   destinations: dests,
+    //   text: memo,
+    //   amount: item.price || pricePerMinute,
+    //   chat_id: item.chatID,
+    //   update_meta: true
+    // })
   }
 
   function onClipPayment(d) {
@@ -167,13 +169,14 @@ export default function Pod({ url, chat, onBoost }) {
       if (d.uuid) sp.uuid = d.uuid
       const memo = JSON.stringify(sp)
       const finalDests: Destination[] = dests.concat(extraDest)
-      feed.sendPayments({
-        destinations: dests,
-        text: memo,
-        amount: pricePerMinute,
-        chat_id: chatID,
-        update_meta: false
-      })
+      console.log('commented out feed.sendPayments here (3)')
+      // feed.sendPayments({
+      //   destinations: dests,
+      //   text: memo,
+      //   amount: pricePerMinute,
+      //   chat_id: chatID,
+      //   update_meta: false
+      // })
     }
   }
 
@@ -245,7 +248,7 @@ export default function Pod({ url, chat, onBoost }) {
       {pod && <PodImage src={pod.image} alt={pod.title} />}
       {chat && episode && <Replay chat={chat} episode={episode}/> }
 
-    
+
 
     {(earned ? true : false) && <Earned onClick={() => setShowStats(true)}>
       <div>Earned:</div>
@@ -277,7 +280,7 @@ export default function Pod({ url, chat, onBoost }) {
           {episode.title}
         </PodEpisode>}
         {/* {(pricePerMinute?true:false) && <Price>
-          {`Price per Minute: ${pricePerMinute} sats`}  
+          {`Price per Minute: ${pricePerMinute} sats`}
         </Price>} */}
       </PodText>
     </PodInfo> : <Center><CircularProgress /></Center>}

@@ -50,11 +50,11 @@ export default function Modals() {
         {ui.viewTribe && <ViewTribe />}
         {ui.onchain && <Onchain />}
         {ui.showVersionDialog && <VersionModal />}
-        {ui.tribeInfo && <TribeInfo />}
+        {/* {ui.tribeInfo && <TribeInfo />}
         {ui.tribesAuthParams && (
           <TribesAuthModal params={ui.tribesAuthParams} />
         )}
-        {ui.personParams && <PersonModal params={ui.personParams} />}
+        {ui.personParams && <PersonModal params={ui.personParams} />} */}
         {ui.newGroupModal && <NewTribeModal />}
       </Wrap>
     );

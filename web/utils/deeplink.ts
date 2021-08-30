@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { chatStore } from "../../src/store/chats";
 import { uiStore } from "../../src/store/ui";
 import { authStore } from "../../src/store/auth";

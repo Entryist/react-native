@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from "react";
 import Modal from "@material-ui/core/Modal";
 import { useStores } from "../../src/store";
