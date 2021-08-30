@@ -216,6 +216,7 @@ function MsgList({
 function Refresher() {
   const theme = useTheme();
   const [show, setShow] = useState(false);
+  // @ts-ignore
   useEffect(() => {
     function doShow() {
       setShow(true);
