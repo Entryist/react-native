@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { constants } from "../../../src/constants";
 import { useStores } from "../../../src/store";
 import styled from "styled-components";
-import { calcExpiry } from "../../../src/store/msgUtils";
+import { calcExpiry } from "../../../src/components/chat/msg/utils";
 import { message } from "../../../src/store/websocketHandlers";
 import Button from "@material-ui/core/Button";
 import CallMadeIcon from "@material-ui/icons/CallMade";
