@@ -1,14 +1,19 @@
-const { 
-    override, 
-    babelInclude, 
-    addDecoratorsLegacy, 
-    disableEsLint, 
-    removeModuleScopePlugin, 
-    addWebpackExternals 
+const {
+    addWebpackAlias,
+    override,
+    babelInclude,
+    addDecoratorsLegacy,
+    disableEsLint,
+    removeModuleScopePlugin,
+    addWebpackExternals
 } = require("customize-cra");
 const path = require('path');
 
 module.exports = override(
+    addWebpackAlias({
+      ["react-native-simple-toast"]:
+      path.resolve(__dirname, "web/react-native-simple-toast.tsx")
+    }),
     removeModuleScopePlugin(),
     addDecoratorsLegacy(),
     disableEsLint(),
@@ -30,7 +35,7 @@ module.exports = override(
 //         disableEsLint(),
 //         removeModuleScopePlugin(),
 //     ),
-//     paths: function (paths, env) {        
+//     paths: function (paths, env) {
 //         paths.appIndexJs = path.resolve(__dirname, 'web/index.tsx');
 //         paths.appSrc = path.resolve(__dirname, 'web');
 //         return paths;
