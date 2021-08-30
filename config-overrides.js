@@ -11,6 +11,8 @@ const path = require('path');
 
 module.exports = override(
     addWebpackAlias({
+      ["react-native-encrypted-storage"]:
+      path.resolve(__dirname, "web/react-native-encrypted-storage.tsx"),
       ["react-native-simple-toast"]:
       path.resolve(__dirname, "web/react-native-simple-toast.tsx")
     }),
