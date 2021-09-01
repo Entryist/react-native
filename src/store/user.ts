@@ -273,10 +273,10 @@ class UserStore {
     try {
       if (!email) return
 
-      const r = await api.invite.post('invite_request', { email }, '', { rawValue: true })
-      if (r) return { status: 'ok', payload: { id: r.invite.id } }
+      const r = await api.shop.post('invite_request', { email }, '', { rawValue: true })
+      if (!r) throw new Error('Failed');
 
-      throw new Error('Failed')
+      return { status: 'ok', payload: { id: r?.invite?.id, duplicate: !!r?.exist } }
     } catch (error) {
       console.log('error store', error)
       return { status: 'failure' }
@@ -285,6 +285,16 @@ class UserStore {
 
   @action
   async testinit() { }
+
+  @action
+  async reportError(error) {
+    console.log(error);
+    try {
+      const r = await api.invite.post('notify', { error }, '', { rawValue: true });
+    } catch (error) {
+      console.log('reportError: ', error)
+    }
+  }
 }
 
 export const userStore = new UserStore()
